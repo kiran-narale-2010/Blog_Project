@@ -17,28 +17,28 @@ public class Post_entity {
 	private String title;
 	private String content;
 	private String imageurl;
-	private int likecount;
+	private Long likecount;
     private LocalDateTime createdAt;
     
     @OneToMany
     private List<Commant_entity> commant_entity;
-   
-	public Post_entity() {
+    
+
+	public Post_entity(Long id, String title, String content, String imageurl, Long likecount, LocalDateTime createdAt,
+			List<Commant_entity> commant_entity) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.content = content;
+		this.imageurl = imageurl;
+		this.likecount = likecount;
+		this.createdAt = createdAt;
+		this.commant_entity = commant_entity;
 	}
 
-	
-	
-	
 
-	public Post_entity(Long id, String title, String content, String imageurl, int likecount, LocalDateTime createdAt) {
-	super();
-	this.id = id;
-	this.title = title;
-	this.content = content;
-	this.imageurl = imageurl;
-	this.likecount = likecount;
-	this.createdAt = createdAt;
-}
+	public Post_entity() {
+	}
 
 
 
@@ -108,7 +108,7 @@ public class Post_entity {
 
 
 
-	public int getLikecount() {
+	public Long getLikecount() {
 		return likecount;
 	}
 
@@ -116,7 +116,7 @@ public class Post_entity {
 
 
 
-	public void setLikecount(int likecount) {
+	public void setLikecount(Long likecount) {
 		this.likecount = likecount;
 	}
 
@@ -137,6 +137,15 @@ public class Post_entity {
 	}
 
 
+	
+	public List<Commant_entity> getCommant_entity() {
+		return commant_entity;
+	}
+
+
+	public void setCommant_entity(List<Commant_entity> commant_entity) {
+		this.commant_entity = commant_entity;
+	}
 
 
 }
